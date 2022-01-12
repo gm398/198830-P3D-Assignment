@@ -308,7 +308,6 @@ public class MeshDestroy : MonoBehaviour
             meshDestroy.ExplodeForce = original.ExplodeForce;
             var health = GameObject.AddComponent<Health>();
             health.SetHealth(10);
-            GameObject.AddComponent<DestructalbeEnemy>();
             Destroy(GameObject, 5f);
         }
 

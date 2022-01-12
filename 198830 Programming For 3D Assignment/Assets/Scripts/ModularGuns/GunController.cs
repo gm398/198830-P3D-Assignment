@@ -105,4 +105,5 @@ public class GunController : MonoBehaviour
     public Transform GetHitscanPoint() { return hitscanPoint; }
     public Transform GetAttackPoint() { return attackPoint; }
     public LayerMask GetLayers() { return layers; }
+    public float GetReloadTime() { return reloadTime; }
 }

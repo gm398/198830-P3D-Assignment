@@ -8,8 +8,8 @@ public class GunFaceTarget : MonoBehaviour
     [SerializeField] float lerpSpeed = 10f;
     [SerializeField] float range = 100f;
     LayerMask layers;
-    public GunController controller;
-    public Transform hitscanPoint, attackPoint;
+    GunController controller;
+    Transform hitscanPoint, attackPoint;
     // Start is called before the first frame update
     private void Awake()
     {
