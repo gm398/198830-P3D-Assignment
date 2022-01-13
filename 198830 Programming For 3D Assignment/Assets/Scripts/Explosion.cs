@@ -9,7 +9,7 @@ public class Explosion : MonoBehaviour
     [SerializeField] float radius = .5f;
     [SerializeField] float lifetime = 1f;
     [SerializeField] float pushForce = 100f;
-
+    [SerializeField] float upForce = 5f;
     [SerializeField] ParticleSystem particles;
 
     private void Awake()
@@ -29,7 +29,8 @@ public class Explosion : MonoBehaviour
         {
             if(c.GetComponent<Rigidbody>() != null)
             {
-                c.GetComponent<Rigidbody>().AddForce(pushForce * (c.transform.position - transform.position).normalized);
+                //c.GetComponent<Rigidbody>().AddForce(pushForce * (c.transform.position - transform.position).normalized);
+                c.GetComponent<Rigidbody>().AddExplosionForce(pushForce, transform.position, radius, upForce, ForceMode.Impulse);
             }
             if(c.GetComponent< Health>() != null)
             {

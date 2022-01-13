@@ -13,8 +13,8 @@ public class GunSpread : MonoBehaviour
     [SerializeField] float lerpSpeed = 10f;
     private Quaternion bulletSpread;
 
-    public GunController controller;
-    public Transform hitscanPoint, attackPoint;
+    GunController controller;
+    Transform hitscanPoint, attackPoint;
    
 
     private void Awake()
@@ -49,24 +49,27 @@ public class GunSpread : MonoBehaviour
     //Lerps the gun to face the direction of shooting or the rest position
     void UpdateLookDirection()
     {
+        
+        //
+        Quaternion q = hitscanPoint.transform.rotation;
+        Vector3 targetVec = hitscanPoint.position + hitscanPoint.forward * 100;
+        if (Physics.Raycast(hitscanPoint.position, hitscanPoint.forward, out RaycastHit hit, 100, layers, QueryTriggerInteraction.Ignore))
+        {
+            targetVec = hit.point;
+            Debug.Log("raucast hits: " + hit);
+        }
+        q.SetLookRotation(targetVec - transform.position, hitscanPoint.up);
+        
+    //
         if (!controller.GetCanShoot())
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, bulletSpread * hitscanPoint.rotation, lerpSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, bulletSpread * q, lerpSpeed * Time.deltaTime);
         }
         else
         {
-            //
-            Quaternion q = hitscanPoint.transform.rotation;
-            Vector3 targetVec = hitscanPoint.position + hitscanPoint.forward * 100;
-            if (Physics.Raycast(hitscanPoint.position, hitscanPoint.forward, out RaycastHit hit, 100, layers, QueryTriggerInteraction.Ignore))
-            {
-                targetVec = hit.point;
-                Debug.Log("raucast hits: " + hit);
-            }
-            q.SetLookRotation(targetVec - transform.position, hitscanPoint.up);
-            transform.rotation = Quaternion.Lerp(transform.rotation, q, 2 * Time.deltaTime);
-            //
+            transform.rotation = Quaternion.Lerp(transform.rotation, q, lerpSpeed * Time.deltaTime);
         }
+
     }
     
 

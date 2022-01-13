@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cb40f7168da4f4e9f1dcbc779a048f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 20
+  MaxHealth: 100
   CurrentHealth: 0
   IsDead: 0
 --- !u!114 &3431263337371989783
@@ -342,7 +342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonInput: f
-  throwForce: 1000
+  throwForce: 10
+  upForce: 2
   interactCooldown: 0.3
   pickupRange: 1.36
   pickupRadius: 1

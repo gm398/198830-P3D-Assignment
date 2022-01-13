@@ -6,6 +6,7 @@ public class RBShot : MonoBehaviour
 {
     //the force a rigidbody projectile will be shot with
     [SerializeField] float shootForce;
+    [SerializeField] float upForce;
 
     //the projectile that will be shot
     [SerializeField] GameObject projectile;
@@ -31,7 +32,8 @@ public class RBShot : MonoBehaviour
         GameObject proj = Instantiate(projectile, attackPoint.position, attackPoint.rotation);
         proj.transform.SetParent(null);
         Rigidbody rb = proj.GetComponent<Rigidbody>();
-        rb.AddForce(shootForce * attackPoint.forward);
+        rb.AddForce(shootForce * attackPoint.forward, ForceMode.Impulse);
+        rb.AddForce(upForce * attackPoint.up, ForceMode.Impulse);
         
         if (temporaryProjectiles)
         {

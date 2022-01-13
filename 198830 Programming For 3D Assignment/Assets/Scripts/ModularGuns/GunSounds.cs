@@ -6,15 +6,29 @@ public class GunSounds : MonoBehaviour
 {
 
 
-    [SerializeField] AudioSource shot1;
-    [SerializeField] AudioSource OOAmmo;
- 
-    public void GunFire()
+    [SerializeField] AudioSource[] shotSounds;
+    [SerializeField] AudioSource[] OOAmmoSounds;
+    [SerializeField] AudioSource[] reloadSounds;
+
+    public void Shoot()
     {
-        shot1.Play();
+        if (shotSounds.Length > 0)
+        {
+            shotSounds[Random.Range(0, shotSounds.Length)].Play();
+        }
     }
     public void OutOfAmmo()
     {
-        OOAmmo.Play();
+        if (OOAmmoSounds.Length > 0)
+        {
+            OOAmmoSounds[Random.Range(0, OOAmmoSounds.Length)].Play();
+        }
+    }
+    public void Reload()
+    {
+        if (reloadSounds.Length > 0)
+        {
+            reloadSounds[Random.Range(0, reloadSounds.Length)].Play();
+        }
     }
 }

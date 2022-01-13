@@ -61,7 +61,7 @@ public class HitscanShot : MonoBehaviour
             }
             if (hit.transform.GetComponent<Rigidbody>() != null)
             {
-                hit.transform.GetComponent<Rigidbody>().AddForceAtPosition(attackPoint.forward * bulletForce, hit.point);
+                hit.transform.GetComponent<Rigidbody>().AddForceAtPosition(attackPoint.forward * bulletForce, hit.point, ForceMode.Impulse);
             }
             if(bulletTrail != null)
             {

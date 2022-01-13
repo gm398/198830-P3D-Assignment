@@ -56,7 +56,7 @@ MonoBehaviour:
   reloadIput: r
   attacksPerSecond: 20
   damage: 5
-  bulletForce: 100
+  bulletForce: 5
   layers:
     serializedVersion: 2
     m_Bits: 1

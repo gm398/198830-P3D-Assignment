@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2655134931829352270
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207957160134393285, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237419982065878050, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: attacksPerSecond
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289767895286565486, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 8077668561312232140, guid: ff733ddd6178af540ada8f1d42dbf5b3, type: 3}
+    - target: {fileID: 8325932506252249555, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}
+      propertyPath: m_Name
+      value: BallMinigun
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b2a3abfb9b88d2439f3a07e5699b5ff, type: 3}

@@ -36,13 +36,19 @@ public class GunFaceTarget : MonoBehaviour
         {
             Quaternion q = hitscanPoint.transform.rotation;
             Vector3 targetVec = hitscanPoint.position + hitscanPoint.forward * 100;
-            if (Physics.Raycast(hitscanPoint.position, hitscanPoint.forward, out RaycastHit hit, 100, layers, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(hitscanPoint.position,
+                hitscanPoint.forward, out RaycastHit hit,
+                100,
+                layers,
+                QueryTriggerInteraction.Ignore))
             {
                 targetVec = hit.point;
                 Debug.Log("raucast hits: " + hit.transform);
             }
             q.SetLookRotation(targetVec - transform.position, hitscanPoint.up);
-            transform.rotation = Quaternion.Lerp(transform.rotation, q, lerpSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation,
+                                                q,
+                                                lerpSpeed * Time.deltaTime);
             //
         }
     }

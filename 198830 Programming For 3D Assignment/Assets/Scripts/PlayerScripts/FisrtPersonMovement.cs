@@ -32,7 +32,7 @@ public class FisrtPersonMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
-
+    
     public void GroundMovement()
     {
         
@@ -59,9 +59,4 @@ public class FisrtPersonMovement : MonoBehaviour
         
     }
 
-    void Die()
-    {
-        Debug.Log("Player Dead");
-        Destroy(this.gameObject, 5f);
-    }
 }

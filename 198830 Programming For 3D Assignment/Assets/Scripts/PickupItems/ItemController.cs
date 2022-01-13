@@ -5,7 +5,8 @@ using UnityEngine;
 public class ItemController : MonoBehaviour
 {
     [SerializeField] private string buttonInput = "f";
-    [SerializeField] private float throwForce = 1000f;
+    [SerializeField] private float throwForce = 100f;
+    [SerializeField] private float upForce = 10f;
 
     //time between pickups to avoid unwanted grabbing
     [SerializeField] private float interactCooldown = .5f;
@@ -67,6 +68,7 @@ public class ItemController : MonoBehaviour
 
         heldItem.transform.SetParent(holdPoint);
         heldItem.transform.position = holdPoint.position;
+        heldItem.transform.localPosition += heldItemDetails.GetHoldOffset(); ;
         heldItem.transform.rotation = holdPoint.rotation;
 
         //gives the point from where hitscan lines are generated to the item if neededS
@@ -95,7 +97,24 @@ public class ItemController : MonoBehaviour
         heldItem.transform.SetParent(null);
         heldItemDetails.EnableItem(false);
 
-        heldItem.GetComponent<Rigidbody>().AddForce(throwForce * holdPoint.forward);
+        Rigidbody rb = heldItem.GetComponent<Rigidbody>();
+        if (rb.mass < .5)
+        {
+            rb.AddForce(throwForce * 2 * rb.mass * holdPoint.forward, ForceMode.Impulse);
+            rb.AddForce(upForce * 2 * rb.mass * holdPoint.up, ForceMode.Impulse);
+        }
+        else
+        {
+            rb.AddForce(throwForce * holdPoint.forward, ForceMode.Impulse);
+            rb.AddForce(upForce * holdPoint.up, ForceMode.Impulse);
+        }
+
+        if(this.GetComponent<CharacterController>() != null)
+        {
+            CharacterController c = this.GetComponent<CharacterController>();
+            rb.AddForce(c.velocity * rb.mass, ForceMode.Impulse);
+        }
+        
 
         heldItem = null;
         heldItemDetails = null;
