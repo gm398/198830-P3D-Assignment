@@ -140,7 +140,7 @@ MonoBehaviour:
   buttonInput: mouse 0
   reloadIput: r
   allowButtonHold: 1
-  attacksPerSecond: 30
+  attacksPerSecond: 15
   layers:
     serializedVersion: 2
     m_Bits: 1
